@@ -75,6 +75,12 @@ class Cistern::Collection < Array
     self
   end
 
+  def size
+    lazy_load unless @loaded
+    super
+  end
+  alias :count :size
+
   def inspect
     lazy_load unless @loaded
     Cistern.formatter.call(self)

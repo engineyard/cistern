@@ -13,6 +13,11 @@ describe "Cistern::Collection" do
     end
   end
 
+  it "should give size and count" do
+    SampleCollection.new.size.should == 3
+    SampleCollection.new.count.should == 3
+  end
+
   it "should give first" do
     SampleCollection.new.first.should == SampleCollectionModel.new(id: 1)
   end
